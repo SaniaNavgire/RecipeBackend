@@ -1,9 +1,9 @@
-const express = require('express')
-const mongoose = require('mongoose')
+const express = require('express');
+const mongoose = require('mongoose');
 require('dotenv').config()
-const User = require('./Models/User')
-const bcrypt = require('bcryptjs')
-const Recipe = require('./Models/Recipe')
+const User = require('./Models/User');
+const bcrypt = require('bcryptjs');
+const Recipe = require('./Models/Recipe');
 
 const app = express()
 const PORT = 3000
@@ -14,7 +14,7 @@ app.use(express.json());  //middleware
 //     res.send("<h1 text align=center >Welcome to the session</h1>")
 // })
 
-//Registration Api
+// Registration Api
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body
     try {
@@ -29,9 +29,9 @@ app.post('/register', async (req, res) => {
         console.log(err)
 
     }
-})
+});
 
-//Login Api
+// Login Api
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body
@@ -51,7 +51,7 @@ app.post('/login', async (req, res) => {
 
         console.log(err)
     }
-})
+});
 
 //Create a recipe
 app.post('/create', async (req, res) => {
@@ -68,7 +68,7 @@ app.post('/create', async (req, res) => {
         console.log(err)
 
     }
-})
+});
 
 //Get All recipe
 
@@ -83,7 +83,7 @@ app.get('/', async (req, res) => {
 
 
     }
-})
+});
 
 //Get Single Recipe
 
@@ -99,7 +99,7 @@ app.get('/:id', async (req, res) => {
         console.log(err)
 
     }
-})
+});
 
 
 //Update Recipe
@@ -117,7 +117,7 @@ app.put('/:id', async (req, res) => {
 
 
     }
-})
+});
 
 //Delete Recipe
 
@@ -132,7 +132,7 @@ app.delete('/:id', async (req, res) => {
 
 
     }
-})
+});
 
 
 
